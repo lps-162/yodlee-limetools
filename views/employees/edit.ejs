@@ -1,14 +1,15 @@
 <div class="col-sm-6">
     <h3>
-        Create New Employee
+        Edit Employee
     </h3>
-    <form action="/employees/create" method="post">
+    <form action="/employees/<%= employee._id %>/edit" method="post">
         <!-- Emp Number -->
-        
+    
         <div class="form-group">
-            <label for="emp_no">Emp Number</label>
+            <label for="emp_no" class="col-2 col-form-label">Emp Number</label>
             <div class="col-10">
-                <input class="form-control" type="number" name="emp_no">
+                <input class="form-control" type="number" name="emp_no" 
+                        value="<%=employee.emp_no%>">
             </div>
         </div>
         <br/>
@@ -16,7 +17,8 @@
         <div class="form-group">
             <label for="emp_no" class="col-2 col-form-label">First Name</label>
             <div class="col-10">
-                <input class="form-control" type="text" name="first_name">
+                <input class="form-control" type="text" name="first_name" 
+                        value="<%=employee.first_name%>" />
             </div>
         </div>
 
@@ -24,7 +26,8 @@
         <div class="form-group">
             <label for="emp_no" class="col-2 col-form-label">Last Name</label>
             <div class="col-10">
-                <input class="form-control" type="text" name="last_name">
+                <input class="form-control" type="text" name="last_name" 
+                    value="<%=employee.last_name%>">
             </div>
         </div>
 
@@ -32,7 +35,8 @@
        <div class="form-group">
             <label for="birth_date" class="col-2 col-form-label">Birth Date</label>
             <div class="col-10">
-                <input class="form-control" type="date" name="birth_date">
+                <input class="form-control" type="date" name="birth_date" 
+                        value="<%= employee.birth_date %>">
             </div>
         </div>
 
@@ -40,8 +44,13 @@
         <div class="form-group">
             <label for="gender">Gender</label>
             <select class="form-control" name="gender">
-                <option value="M" selected>Male</option>
-                <option value="F">Female</option>
+                <% if (employee.gender === 'M') { %>
+                    <option selected value="M">Male</option>
+                    <option value="F">Female</option>
+                <% } else if (employee.gender === 'F') { %>
+                    <option value="M">Male</option>
+                    <option selected value="F">Female</option>
+                <% } %>
             </select>
         </div>
 
@@ -49,7 +58,8 @@
         <div class="form-group">
             <label for="hire_date" class="col-2 col-form-label">Hire Date</label>
             <div class="col-10">
-                <input class="form-control" type="date" name="hire_date">
+                <input class="form-control" type="date" name="hire_date" 
+                    value="<%=employee.hire_date%>">
             </div>
         </div>
 

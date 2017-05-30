@@ -6,6 +6,9 @@ const employeesController = require('../controllers/employees-controller');
 employeesRouter.get('/employees/create', employeesController.showCreateForm);
 employeesRouter.post('/employees/create', employeesController.createEmployee);
 
+employeesRouter.get('/employees/:id/edit', employeesController.showEditForm);
+employeesRouter.post('/employees/:id/edit', employeesController.updateEmployee);
+
 employeesRouter.get('/employees', employeesController.listEmployees);
 employeesRouter.get('/employees/:id', employeesController.showEmployeeDetails);
 
