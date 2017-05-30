@@ -1,3 +1,21 @@
-<h3>
-    Employees Details page
-</h3>
+<h3>Employee Details Page</h3>
+<p>
+    Emp No: <%= employee.emp_no %>
+</p>
+<p>
+    Emp Name: <%= employee.first_name %> <%= employee.last_name %>
+</p>
+<p>
+    Born On : <%= employee.birth_date %>
+</p>
+<p>
+    Gender: <%= employee.gender %>
+</p>
+<p>
+    Hired On : <%= employee.hire_date %>
+</p>
+<p>
+    Created On : <%= employee.created_at %>
+</p>
+
+<a href="/employees/<%=employee._id%>/edit" class="btn btn-sm btn-primary">Edit</a>
