@@ -1,0 +1,16 @@
+{
+  "name": "yodlee-limetools",
+  "version": "1.0.0",
+  "description": "A simple ERP tool with Node.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "LP Venkat",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
+    "express-ejs-layouts": "^2.3.0"
+  }
+}

@@ -1,0 +1,46 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- views/partials/head.ejs -->
+
+    <meta charset="UTF-8">
+    <title>Limetools</title>
+
+    <!-- CSS (load bootstrap from a CDN) -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        <span class="glyphicon glyphicon glyphicon-user"></span>
+                        LimeTools
+                    </a>
+                </div>
+
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>                                     
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/employees">Employees</a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!--Body portion of the website -->
+        <%- body %>
+    </div>
+
+
+</body>
+</html>
