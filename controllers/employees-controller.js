@@ -7,7 +7,8 @@ module.exports = {
 }
 
 function listEmployees(req, res) {
-    res.render('employees/list');
+    
+    res.render('employees/list', { employees: employees });
 }
 
 function showEmployeeDetails(req, res) {

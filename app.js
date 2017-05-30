@@ -3,6 +3,12 @@ const expressLayouts = require('express-ejs-layouts');
 const bodyParser = require('body-parser');
 const app = express();
 
+const mongoose = require('mongoose');
+const config = require('./config/config.json')[app.get('env')];
+console.log(config.MONGODB_URI);
+mongoose.connect(config.MONGODB_URI);
+
+
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
 

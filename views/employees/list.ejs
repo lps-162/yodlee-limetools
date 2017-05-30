@@ -3,4 +3,30 @@
     <a href="/employees/create" class="btn btn-sm btn-primary">
         Create Employee
     </a>
+
+    <table class="table table-bordered">
+        <thead>
+            <th>Emp No</th>
+            <th>Full Name </th>
+            <th>Actions</th>
+        </thead>
+        
+        <tbody>
+
+            <% for (let employee of employees ) { %>
+                <tr>
+                    <td><%= employee.emp_no %> </td>
+                    <td><%= employee.first_name %> - <%= employee.last_name %></td>
+                    <td>
+                        <a href="/employees/" class="btn btn-success">
+                            View
+                        </a>
+                        <a href="/employees/" class="btn btn-danger">
+                            Delete
+                        </a>
+                    </td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
 </h3>
