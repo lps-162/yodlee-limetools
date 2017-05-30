@@ -1,13 +1,10 @@
 const express = require('express')
 
 const pagesRouter = express.Router();
+const pagesController = require('../controllers/pages-controller');
 
-pagesRouter.get('/', (req, res) => {
-    res.render('pages/home');
-});
+pagesRouter.get('/', pagesController.showHomePage);
 
-pagesRouter.get('/about', (req, res) => {
-    res.render('pages/about');
-});
+pagesRouter.get('/about', pagesController.showAboutPage);
 
 module.exports = pagesRouter;

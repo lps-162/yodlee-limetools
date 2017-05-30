@@ -1,15 +1,10 @@
 const express = require('express');
 
 const employeesRouter = express.Router();
+const employeesController = require('../controllers/employees-controller');
 
-employeesRouter.get('/employees', (req, res) => {
-    res.render('employees/list');
-});
+employeesRouter.get('/employees', employeesController.listEmployees);
 
-employeesRouter.get('/employees/:employee_id', (req, res) => {
-    const employeeId = req.params.employee_id;
-
-    res.send('Employee details page : ' + employeeId);
-});
+employeesRouter.get('/employees/:id', employeesController.showEmployeeDetails);
 
 module.exports = employeesRouter;
