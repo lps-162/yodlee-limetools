@@ -44,9 +44,12 @@ app.use((req, res, next) => {
 const pagesRouter = require('./routes/pages-router');
 const employeesRouter = require('./routes/employees-router');
 const authRouter = require('./routes/auth-router');
+const apiRouter = require('./routes/api-router');
+
 app.use(pagesRouter);
 app.use(employeesRouter);
 app.use(authRouter);
+app.use(apiRouter);
 
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
