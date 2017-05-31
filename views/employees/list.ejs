@@ -1,5 +1,6 @@
 <h3>
     List of Employees
+    <br/>
     <a href="/employees/create" class="btn btn-sm btn-primary">
         Create Employee
     </a>
@@ -21,9 +22,14 @@
                         <a href="/employees/<%=employee.id%>" class="btn btn-success">
                             View
                         </a>
-                        <a href="/employees/" class="btn btn-danger">
+                        <!--<a href="/employees/<%=employee.id%>/delete" class="btn btn-danger">
                             Delete
-                        </a>
+                        </a>-->
+                        <form method="post" action="/employees/<%=employee.id%>/delete">
+                            <button class="btn btn-sm btn-danger" type="submit">
+                                Delete
+                            </button>
+                        </form>
                     </td>
                 </tr>
             <% } %>

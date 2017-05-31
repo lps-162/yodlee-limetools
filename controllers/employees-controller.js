@@ -70,11 +70,22 @@ function updateEmployee(req, res, next) {
 
 }
 
+function deleteEmployee(req, res) {
+    const employeeId = req.params.id;
+
+    EmployeeModel.findByIdAndRemove(employeeId).then(() => {
+        res.redirect('/employees');
+    }).catch((err) => {
+        res.render('error', { message: 'Error deleting Employee' });
+    }); 
+}
+
 module.exports = {
     listEmployees: listEmployees,
     showEmployeeDetails: showEmployeeDetails,
     showCreateForm: showCreateForm,
     createEmployee: createEmployee,
     showEditForm: showEditForm,
-    updateEmployee: updateEmployee
+    updateEmployee: updateEmployee,
+    deleteEmployee: deleteEmployee
 }
