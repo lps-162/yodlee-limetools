@@ -22,6 +22,8 @@ authRouter.post('/auth/login',
                 })
             );
 
-authRouter.get('/auth/profile', authController.showUserProfile);
+authRouter.get('/auth/profile', authController.isLoggedIn, authController.showUserProfile);
+
+authRouter.get('/auth/logout', authController.logoutUser);
 
 module.exports = authRouter;

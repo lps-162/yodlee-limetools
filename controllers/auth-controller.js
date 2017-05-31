@@ -1,7 +1,9 @@
 module.exports = {
     showSignupForm: showSignupForm,
     showLoginForm: showLoginForm,
-    showUserProfile: showUserProfile
+    showUserProfile: showUserProfile,
+    isLoggedIn: isLoggedIn,
+    logoutUser: logoutUser
 };
 
 function showSignupForm(req, res) {
@@ -13,5 +15,17 @@ function showLoginForm(req, res) {
 }
 
 function showUserProfile(req, res) {
-    res.render('auth/profile');
+    res.render('auth/profile', { user: req.user });
+}
+
+function logoutUser(req, res, next) {
+    req.logout();
+    res.redirect('/');
+}
+
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated())
+        return next();
+
+    res.redirect('/');
 }

@@ -29,7 +29,17 @@
                 <ul class="nav navbar-nav">
                     <li><a href="/">Home</a></li>                                     
                     <li><a href="/about">About</a></li>
-                    <li><a href="/employees">Employees</a></li>
+                    
+
+                    <% if (locals.loggedInUser !== undefined) { %>
+                        <li><a href="/employees">Employees</a></li>
+                        <li>
+                            <a href="/auth/profile">
+                            Hi, <%= locals.loggedInUser.local.email %>
+                            </a>
+                        </li>
+                        <li><a href="/auth/logout">Logout</a></li>
+                    <% } %>
                 </ul>
 
             </div>

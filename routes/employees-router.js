@@ -2,6 +2,9 @@ const express = require('express');
 
 const employeesRouter = express.Router();
 const employeesController = require('../controllers/employees-controller');
+const authController = require('../controllers/auth-controller');
+
+employeesRouter.use('/employees', authController.isLoggedIn);
 
 employeesRouter.get('/employees/create', employeesController.showCreateForm);
 employeesRouter.post('/employees/create', employeesController.createEmployee);

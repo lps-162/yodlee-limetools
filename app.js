@@ -33,6 +33,11 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use((req, res, next) => {
+    res.locals.loggedInUser = req.user;
+    next();
+});
+
 // setting up routes
 const pagesRouter = require('./routes/pages-router');
 const employeesRouter = require('./routes/employees-router');
