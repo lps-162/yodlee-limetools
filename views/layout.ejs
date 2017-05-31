@@ -47,6 +47,11 @@
     </header>
 
     <div class="container">
+        <% if (locals.error !== undefined && locals.error.length > 0) { %>
+            <div class="alert alert-danger">
+                <%= locals.error %>
+            </div>
+        <% } %>
         <!--Body portion of the website -->
         <%- body %>
     </div>

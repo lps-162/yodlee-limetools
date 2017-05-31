@@ -13,9 +13,11 @@ const config = require('./config/config.json')[app.get('env')];
 console.log(config.MONGODB_URI);
 mongoose.connect(config.MONGODB_URI);
 
+const flash = require('connect-flash');
 
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
+app.use(flash());
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));

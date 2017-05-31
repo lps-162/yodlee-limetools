@@ -32,7 +32,8 @@ function showEmployeeDetails(req, res) {
 
 
 function showCreateForm(req, res) {
-    res.render('employees/create');
+    const error = req.flash('error');
+    res.render('employees/create', { error: error });
 }
 
 function createEmployee(req, res) {
@@ -42,7 +43,9 @@ function createEmployee(req, res) {
     employee.save().then((employee) => {
         res.redirect('/employees/' + employee.id);
     }).catch((err) => {
-        res.render('error', { message: 'Error insertin Employee' });
+        req.flash('error', 'Employee Creation Failed');
+        res.redirect('/employees/create');
+        //res.render('error', { message: 'Error insertin Employee' });
     });
 }
 
